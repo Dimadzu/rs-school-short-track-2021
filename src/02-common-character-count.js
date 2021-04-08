@@ -11,13 +11,12 @@
  */
 function getCommonCharacterCount(s1, s2) {
   const repeatArr = [];
-  const minLength = (s1.length < s2.length) ? s1.length : s2.length;
-  for (let i = 1; i < minLength; i++) {
+  for (let i = 1; i < s1; i++) {
     if (s1.indexOf(s2[i]) !== -1) {
       repeatArr.push(s2[i]);
     }
   }
-  const number = Number(repeatArr.length);
+  const number = repeatArr.length;
   return number;
 }
 module.exports = getCommonCharacterCount;
