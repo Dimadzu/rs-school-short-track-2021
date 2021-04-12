@@ -12,16 +12,23 @@
  */
 
 class Queue {
+  constructor(...items) {
+    this.arritems = [];
+    this.enqueue(...items);
+  }
+
   get size() {
-    throw new Error('Not implemented');
+    return this.arritems.length;
   }
 
-  enqueue(/* element */) {
-    throw new Error('Not implemented');
+  enqueue(...items) {
+    items.forEach((item) => this.arritems.push(item));
+    return this.arritems;
   }
 
-  dequeue() {
-    throw new Error('Not implemented');
+  dequeue(count = 1) {
+    this.arritems.splice(this.arritems.length - 1, count);
+    return this.arritems;
   }
 }
 
